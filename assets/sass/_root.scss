@@ -1,0 +1,69 @@
+@font-face {
+  font-family: "Invention";
+  src: url("fonts/Invention-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Invention";
+  src: url("fonts/Invention-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Invention";
+  src: url("fonts/Invention-ExtraBold.ttf") format("truetype");
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: "Khand";
+  src: url("fonts/Khand-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+
+
+:root {
+  --container-max-width: 97vw;
+
+  @media all and (min-width:992px) {
+    --container-max-width: calc(100vw - 10rem);
+  }
+
+}
+
+html {
+  font-size: calc(10px + (14 - 10) * ((100vw - 768px) / (1440 - 768)));
+  padding: 0;
+}
+
+body, html {
+  margin: 0;
+  width: 100%;
+  background-color: $color-white;
+  font-family: 'Invention', sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+b, strong { font-weight: 700; }
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
+  padding: 0;
+  font-family: Khand,sans-serif;
+  font-weight: bold;
+  color: $color-primary;
+
+  &:not(.pt):first-child {
+    padding-top: 0;
+  }
+}
+
+
+/* Page  */
+.page-container {
+  max-width: var(--container-max-width);
+  width: 100%;
+  margin: 0 auto;
+}
