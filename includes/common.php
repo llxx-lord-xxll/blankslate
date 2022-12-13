@@ -29,7 +29,16 @@ function idt_notice_dismissed() {
 add_action( 'wp_enqueue_scripts', 'idt_enqueue' );
 function idt_enqueue() {
     wp_enqueue_style( 'idt-style', get_stylesheet_uri() );
+    wp_enqueue_style( 'idt-theme-style', get_stylesheet_directory_uri() . '/assets/css/theme.css' );
+    wp_enqueue_style( 'jquery-modal', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css',false,'0.9.1' );
+
+
+    wp_enqueue_script( 'jquery-modal', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js',array('jquery'),'0.9.1',true );
+    wp_enqueue_script( 'idt-script', get_stylesheet_directory_uri() . '/assets/js/script.js',array('jquery', 'jquery-modal'),'1.0.0',true);
+    wp_enqueue_script( 'fontawesome',  'https://kit.fontawesome.com/2a0c8f31a4.js',array(),'5.0.0',true);
+
     wp_enqueue_script( 'jquery' );
+
 }
 add_action( 'wp_footer', 'idt_footer' );
 function idt_footer() {
@@ -164,3 +173,14 @@ function idt_comment_count( $count ) {
         return $count;
     }
 }
+function custom_search_form( $form ) {
+    $form = '<form role="search" method="get" id="searchform" class="searchform" action="' . home_url( '/' ) . '" >
+          <div class="input-container">
+            <i class="fas fa-search"></i>
+            <input class="input-field" type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="Search"/>
+          </div>
+      </form>';
+
+    return $form;
+}
+add_filter( 'get_search_form', 'custom_search_form', 40 );

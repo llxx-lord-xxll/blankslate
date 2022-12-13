@@ -35,7 +35,10 @@ html {
   font-size: calc(10px + (14 - 10) * ((100vw - 768px) / (1440 - 768)));
   padding: 0;
 }
-
+.container{
+  max-width: var(--container-max-width);
+  margin: auto;
+}
 body, html {
   margin: 0;
   width: 100%;
@@ -60,10 +63,15 @@ h1, h2, h3, h4, h5 {
   }
 }
 
-
-/* Page  */
-.page-container {
-  max-width: var(--container-max-width);
-  width: 100%;
-  margin: 0 auto;
+button,.button{
+  background: $color-primary;
+  border-radius: 28px;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  &:hover {
+    background: $primary-color-overlay;
+    text-decoration: none;
+  }
 }

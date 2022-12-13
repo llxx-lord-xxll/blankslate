@@ -1,1 +1,77 @@
 $spacing: 1rem;
+
+.break {
+  flex-basis: 100% !important;
+  height: 0;
+}
+
+header {
+  background-color: $color-white;
+  color: white;
+  padding-top: 2.5rem;
+  &>.container{
+    display: flex;
+    flex-wrap: wrap;
+    & > div, & >nav{
+      flex: 1 1;
+      text-align: center;
+    }
+    nav{
+      ul{
+        li{
+          display: inline;
+          a{
+            padding: 0 16px;
+            text-decoration: none;
+            color: $color-text;
+          }
+        }
+      }
+    }
+    #branding{
+      #site-title{
+        a{
+          text-decoration: none;
+          color: $color-secondary;
+        }
+      }
+      #site-description{
+        color: $color-text;
+      }
+    }
+  }
+  #search form{
+    text-align: center;
+    max-width: 300px;
+    .input-container {
+      display: -ms-flexbox; /* IE10 */
+      display: flex;
+      width: 100%;
+      margin-bottom: 15px;
+      i {
+        padding: 10px 0;
+        background: $input-color;
+        color: $color-text;
+        min-width: 50px;
+        text-align: center;
+        border-top-left-radius: $border-radius;
+        border-bottom-left-radius: $border-radius;
+        border: 0;
+      }
+      .input-field {
+        width: 100%;
+        background: $input-color;
+        color: $color-text;
+        padding: 10px;
+        outline: none;
+        border-top-right-radius: $border-radius;
+        border-bottom-right-radius: $border-radius;
+        border: 0;
+        &:focus {
+          border: 0;
+          outline: none;
+        }
+      }
+    }
+  }
+}
