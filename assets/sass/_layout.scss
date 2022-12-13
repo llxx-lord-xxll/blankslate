@@ -75,3 +75,37 @@ header {
     }
   }
 }
+
+footer#footer{
+  background: $color-footer;
+  color: $color-white;
+  padding: 2.5rem 0;
+  &>.container {
+    display: flex;
+    flex-wrap: wrap;
+    & > div{
+      flex: 1 1;
+    }
+    nav{
+      ul{
+        padding: 0 0 2rem 0;
+        li{
+          display: inline;
+          &:first-child{
+            a{
+              padding-left: 0;
+            }
+          }
+          a{
+            padding: 0 16px;
+            color: $color-white;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    .block-2{
+      text-align: right;
+    }
+  }
+}

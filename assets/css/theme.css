@@ -142,4 +142,34 @@ header #search form .input-container .input-field:focus {
   outline: none;
 }
 
+footer#footer {
+  background: #333e47;
+  color: #FFFFFF;
+  padding: 2.5rem 0;
+}
+footer#footer > .container {
+  display: flex;
+  flex-wrap: wrap;
+}
+footer#footer > .container > div {
+  flex: 1 1;
+}
+footer#footer > .container nav ul {
+  padding: 0 0 2rem 0;
+}
+footer#footer > .container nav ul li {
+  display: inline;
+}
+footer#footer > .container nav ul li:first-child a {
+  padding-left: 0;
+}
+footer#footer > .container nav ul li a {
+  padding: 0 16px;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+footer#footer > .container .block-2 {
+  text-align: right;
+}
+
 /*# sourceMappingURL=theme.css.map */
