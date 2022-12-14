@@ -315,6 +315,7 @@ main .post-grid .grid .card .card__meta {
   margin: 0;
   margin-right: -1em;
   margin-bottom: 0.75em;
+  padding-left: 0;
 }
 main .post-grid .grid .card .card__meta.card__meta--last {
   margin-bottom: 0;
