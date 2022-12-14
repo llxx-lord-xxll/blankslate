@@ -158,14 +158,14 @@ main{
         width: 50%;
         flex: 0 0 240px;
         margin: 5px;
-      &.tall {
-        flex-basis: 490px;
-        .card {
-          .card__image {
-            height: 490px;
+        &.tall {
+          flex-basis: 490px;
+          .card {
+            .card__image {
+              height: 490px;
+            }
           }
         }
-      }
       }
       .card {
         .card__image {
@@ -294,3 +294,4 @@ main{
     }
   }
 }
+
