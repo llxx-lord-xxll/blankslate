@@ -62,6 +62,16 @@ h1:not(.pt):first-child, h2:not(.pt):first-child, h3:not(.pt):first-child, h4:no
   padding-top: 0;
 }
 
+h2.secondary {
+  font-family: "Invention";
+  font-weight: 100;
+  color: #333e47;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding-left: 5px;
+  text-transform: uppercase;
+}
+
 button, .button {
   background: #009791;
   border-radius: 28px;
@@ -73,6 +83,10 @@ button, .button {
 button:hover, .button:hover {
   background: rgba(0, 151, 145, 0.9);
   text-decoration: none;
+}
+
+.widget-area {
+  display: none;
 }
 
 .break {
@@ -324,14 +338,6 @@ main .post-grid .grid .card .card__meta li:not(:last-child):after {
 }
 main .post-grid .grid .card .card__meta li > a {
   color: #f8f8f8;
-}
-main .trending-posts h2 {
-  font-family: "Invention";
-  font-weight: 100;
-  color: #333e47;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  padding-left: 5px;
 }
 
 /*# sourceMappingURL=theme.css.map */

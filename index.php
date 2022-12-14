@@ -102,7 +102,7 @@ wp_reset_query();
             ?>
         </div>
         <div class="trending-posts">
-            <h2>Trending Posts</h2>
+            <h2 class="secondary">Trending Posts</h2>
             <div class="post-grid">
                 <?php
                 $trendy_posts  = get_posts( array( 'post_type' => 'post', 'meta_key' => 'post_views_count', 'orderby' => 'meta_value_num', 'order' => 'DESC', 'posts_per_page' => 3 ) );
@@ -151,12 +151,17 @@ wp_reset_query();
                 ?>
             </div>
         </div>
+
+    <div class="blog-posts">
+        <h2 class="secondary">Latest Article</h2>
         <!--        --><?php
         //
         //    if ( have_posts() ) : while ( have_posts() ) : the_post();
         //        get_template_part( 'entry' );
         //    endwhile; endif;
         //    ?>
+
+    </div>
     </div>
 <?php
 
