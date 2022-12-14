@@ -64,7 +64,7 @@ wp_reset_query();
                                 <div class="card__image">
                                     <img src="<?php echo get_the_post_thumbnail_url($sticky_post_id,'full') ?>" alt="">
 
-                                    <div class="card__overlay card__overlay--dark">
+                                    <div class="card__overlay card__overlay--dark" data-cat-color="<?php echo get_field('styling_color',get_term(reset($sticky_cats))); ?>">
                                         <div class="card__overlay-content">
                                             <ul class="card__meta">
                                                 <li><a href="#">Featured</a></li>
@@ -116,7 +116,7 @@ wp_reset_query();
                             <div class="card__image">
                                 <img src="<?php echo get_the_post_thumbnail_url($trendy_post_id,'full') ?>" alt="">
 
-                                <div class="card__overlay card__overlay--dark">
+                                <div class="card__overlay card__overlay--dark"  data-cat-color="<?php echo get_field('styling_color',get_term(reset($trendy_cats))); ?>">
                                     <div class="card__overlay-content">
                                         <ul class="card__meta">
                                             <li><a href="#">Trending</a></li>
@@ -163,7 +163,7 @@ wp_reset_query();
                         <div class="card__image">
                             <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(),'full') ?>" alt="">
 
-                            <div class="card__overlay card__overlay--dark">
+                            <div class="card__overlay card__overlay--dark"  data-cat-color="<?php echo get_field('styling_color',get_term(reset($cats))); ?>">
                                 <div class="card__overlay-content">
                                     <ul class="card__meta">
                                         <?php

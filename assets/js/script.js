@@ -41,4 +41,15 @@ jQuery(document).ready(function($){
             }
         });
     })
+
+    jQuery.each( $('.post-grid .grid .card .card__overlay'), function (index, card_overlay){
+        $(card_overlay).css('border-color',$(card_overlay).attr('data-cat-color'))
+    } )
+    $(document).on('mouseenter','.post-grid .grid .card .card__overlay',function (e){
+        $(this).attr('data-original-bg',$(this).css('background-image'));
+        $(this).css('background-image','linear-gradient(to bottom, ' + $(this).attr('data-cat-color') + '66, ' + $(this).attr('data-cat-color') + '99)')
+    });
+    $(document).on('mouseleave','.post-grid .grid .card .card__overlay',function (e){
+        $(this).css('background-image','');
+    });
 });

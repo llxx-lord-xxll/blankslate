@@ -229,6 +229,11 @@ main{
           top: 0;
           width: 100%;
           z-index: 1;
+          box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          -webkit-box-sizing: border-box;
+          border-bottom: 4px solid rgba(0,0,0,0);
+          transition: all 2s ease-in-out;
         }
 
         .card__overlay--dark {

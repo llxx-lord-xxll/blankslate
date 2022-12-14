@@ -13,7 +13,7 @@
                         <div class="card__image">
                             <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(),'full') ?>" alt="">
 
-                            <div class="card__overlay card__overlay--dark">
+                            <div class="card__overlay card__overlay--dark"  data-cat-color="<?php echo get_field('styling_color',get_term(reset($cats))); ?>">
                                 <div class="card__overlay-content">
                                     <ul class="card__meta">
                                         <?php
