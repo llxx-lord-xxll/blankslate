@@ -4,6 +4,7 @@ $spacing: 1rem;
   flex-basis: 100% !important;
   height: 0;
 }
+.clear { clear: both; float: left; display: block; position: relative; }
 
 header {
   background-color: $color-white;
@@ -106,6 +107,190 @@ footer#footer{
     }
     .block-2{
       text-align: right;
+    }
+  }
+}
+
+main{
+  .idt-hero-post{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    text-transform: uppercase;
+    .post-details{
+      padding: 5rem;
+      .categories, .estimation{
+        padding-left: 0;
+        li{
+          color: $color-white;
+          list-style: none;
+          display: inline;
+          border-right: 1px solid white;
+          &:last-child{
+            border-right: none;
+          }
+          a{
+            color: $color-white;
+            text-decoration: white;
+            padding: 5px;
+            text-transform: uppercase;
+          }
+        }
+
+      }
+      h2{
+        font-size: 5rem;
+        color: $color-white;
+      }
+    }
+  }
+  .post-grid {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    height: 500px;
+    width: 100%;
+
+    .grid{
+      @media screen and (min-width: 40.063em) {
+        width: 50%;
+        flex: 0 0 240px;
+        margin: 5px;
+      &.tall {
+        flex-basis: 490px;
+        .card {
+          .card__image {
+            height: 490px;
+          }
+        }
+      }
+      }
+      .card {
+        .card__image {
+          -webkit-border-radius: 3px;
+          -moz-border-radius: 3px;
+          border-radius: 3px;
+          display: block;
+          height: 240px;
+          overflow: hidden;
+          position: relative;
+
+          > img {
+            display: block;
+            margin-bottom: 0;
+            width: 100%;
+
+            -webkit-transition: all 0.25s ease-in-out;
+            -moz-transition: all 0.25s ease-in-out;
+            -ms-transition: all 0.25s ease-in-out;
+            -o-transition: all 0.25s ease-in-out;
+            transition: all 0.25s ease-in-out;
+          }
+
+          &:hover > img {
+            -webkit-transform: scale(1.2);
+            -moz-transform: scale(1.2);
+            -ms-transform: scale(1.2);
+            -o-transform: scale(1.2);
+            transform: scale(1.2);
+          }
+        }
+
+        .card__title {
+          color: white;
+          display: inline-block;
+          font-size: 1.5em;
+          font-weight: 700;
+          line-height: 1.2;
+          margin-bottom: 0.75em;
+          text-decoration: none;
+
+          -webkit-transition: all 0.3s ease-out;
+          -moz-transition: all 0.3s ease-out;
+          transition: all 0.3s ease-out;
+
+          &:hover {
+            color: rgba(white, 0.7);
+            text-decoration: none;
+          }
+        }
+
+        .card__overlay {
+          content: "";
+          bottom: 0;
+          display: block;
+          height: 100%;
+          left: 0;
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 100%;
+          z-index: 1;
+        }
+
+        .card__overlay--dark {
+          background-image: linear-gradient(
+                          to bottom,
+                          rgba($color-overlay, 0.1),
+                          rgba($color-overlay, 0.8)
+          );
+          z-index: 2;
+        }
+
+        .card__overlay-content {
+          position: absolute;
+          bottom: 0;
+          padding: 1.5em;
+          z-index: 3;
+        }
+
+        .card__meta {
+          margin: 0;
+          margin-right: -1em;
+          margin-bottom: 0.75em;
+
+          &.card__meta--last {
+            margin-bottom: 0;
+          }
+
+          li {
+            color: #f8f8f8;
+            display: inline;
+            list-style-type: none;
+            margin-bottom: 0;
+            padding-right: 1em;
+
+            font-size: 0.85em;
+            font-variant: small-caps;
+            letter-spacing: 1px;
+
+            &:not(:last-child):after {
+              content: "\25cf";
+              font-style: normal;
+              position: relative;
+              color: rgba(white, 0.25);
+              right: -0.6em;
+            }
+
+            > a {
+              color: #f8f8f8;
+            }
+          }
+        }
+
+      }
+    }
+  }
+  .trending-posts{
+    h2{
+      font-family: 'Invention';
+      font-weight: 100;
+      color: $color-secondary;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      padding-left: 5px;
     }
   }
 }

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Invention";
   src: url("fonts/Invention-Regular.ttf") format("truetype");
@@ -77,6 +78,13 @@ button:hover, .button:hover {
 .break {
   flex-basis: 100% !important;
   height: 0;
+}
+
+.clear {
+  clear: both;
+  float: left;
+  display: block;
+  position: relative;
 }
 
 header {
@@ -170,6 +178,160 @@ footer#footer > .container nav ul li a {
 }
 footer#footer > .container .block-2 {
   text-align: right;
+}
+
+main .idt-hero-post {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  text-transform: uppercase;
+}
+main .idt-hero-post .post-details {
+  padding: 5rem;
+}
+main .idt-hero-post .post-details .categories, main .idt-hero-post .post-details .estimation {
+  padding-left: 0;
+}
+main .idt-hero-post .post-details .categories li, main .idt-hero-post .post-details .estimation li {
+  color: #FFFFFF;
+  list-style: none;
+  display: inline;
+  border-right: 1px solid white;
+}
+main .idt-hero-post .post-details .categories li:last-child, main .idt-hero-post .post-details .estimation li:last-child {
+  border-right: none;
+}
+main .idt-hero-post .post-details .categories li a, main .idt-hero-post .post-details .estimation li a {
+  color: #FFFFFF;
+  text-decoration: white;
+  padding: 5px;
+  text-transform: uppercase;
+}
+main .idt-hero-post .post-details h2 {
+  font-size: 5rem;
+  color: #FFFFFF;
+}
+main .post-grid {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  height: 500px;
+  width: 100%;
+}
+@media screen and (min-width: 40.063em) {
+  main .post-grid .grid {
+    width: 50%;
+    flex: 0 0 240px;
+    margin: 5px;
+  }
+  main .post-grid .grid.tall {
+    flex-basis: 490px;
+  }
+  main .post-grid .grid.tall .card .card__image {
+    height: 490px;
+  }
+}
+main .post-grid .grid .card .card__image {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  display: block;
+  height: 240px;
+  overflow: hidden;
+  position: relative;
+}
+main .post-grid .grid .card .card__image > img {
+  display: block;
+  margin-bottom: 0;
+  width: 100%;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -ms-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+main .post-grid .grid .card .card__image:hover > img {
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
+}
+main .post-grid .grid .card .card__title {
+  color: white;
+  display: inline-block;
+  font-size: 1.5em;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.75em;
+  text-decoration: none;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+main .post-grid .grid .card .card__title:hover {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+}
+main .post-grid .grid .card .card__overlay {
+  content: "";
+  bottom: 0;
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+main .post-grid .grid .card .card__overlay--dark {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8));
+  z-index: 2;
+}
+main .post-grid .grid .card .card__overlay-content {
+  position: absolute;
+  bottom: 0;
+  padding: 1.5em;
+  z-index: 3;
+}
+main .post-grid .grid .card .card__meta {
+  margin: 0;
+  margin-right: -1em;
+  margin-bottom: 0.75em;
+}
+main .post-grid .grid .card .card__meta.card__meta--last {
+  margin-bottom: 0;
+}
+main .post-grid .grid .card .card__meta li {
+  color: #f8f8f8;
+  display: inline;
+  list-style-type: none;
+  margin-bottom: 0;
+  padding-right: 1em;
+  font-size: 0.85em;
+  font-variant: small-caps;
+  letter-spacing: 1px;
+}
+main .post-grid .grid .card .card__meta li:not(:last-child):after {
+  content: "●";
+  font-style: normal;
+  position: relative;
+  color: rgba(255, 255, 255, 0.25);
+  right: -0.6em;
+}
+main .post-grid .grid .card .card__meta li > a {
+  color: #f8f8f8;
+}
+main .trending-posts h2 {
+  font-family: "Invention";
+  font-weight: 100;
+  color: #333e47;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding-left: 5px;
 }
 
 /*# sourceMappingURL=theme.css.map */
