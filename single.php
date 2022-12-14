@@ -7,3 +7,5 @@
 <?php get_template_part( 'nav', 'below-single' ); ?>
 </footer>
 <?php get_footer(); ?>
+
+<?php setPostViews(get_the_ID()); ?>
