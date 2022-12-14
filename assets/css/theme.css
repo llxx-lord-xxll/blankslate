@@ -340,6 +340,7 @@ main .post-grid .grid .card .card__meta li:not(:last-child):after {
 }
 main .post-grid .grid .card .card__meta li > a {
   color: #f8f8f8;
+  text-decoration: none;
 }
 main .blog-posts {
   margin-bottom: 2rem;
