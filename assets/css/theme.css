@@ -368,7 +368,7 @@ main .blog-posts .post-grid .grid .card .card__image {
 }
 
 .blocker {
-  z-index: 999999999999;
+  z-index: 999999999999 !important;
 }
 
 .blog-pagination {
