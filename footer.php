@@ -22,8 +22,8 @@
 <?php wp_footer(); ?>
 <!-- Modal HTML embedded directly into document -->
 <div id="ex1" class="modal">
-    <p>Thanks for clicking. That felt good.</p>
-    <a href="#" rel="modal:close">Close</a>
+    <p style="text-align: center; padding-bottom: 0">Subscribe to our daily newsletter</p>
+    <?php echo do_shortcode('[contact-form-7 id="29" title="Newsletter"]'); ?>
 </div>
 </body>
 </html>
