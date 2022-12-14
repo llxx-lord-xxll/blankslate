@@ -154,12 +154,50 @@ wp_reset_query();
 
     <div class="blog-posts">
         <h2 class="secondary">Latest Article</h2>
-        <!--        --><?php
-        //
-        //    if ( have_posts() ) : while ( have_posts() ) : the_post();
-        //        get_template_part( 'entry' );
-        //    endwhile; endif;
-        //    ?>
+        <div class="post-grid">
+            <?php
+            if ( have_posts() ) : while ( have_posts() ) : the_post();
+                $cats = wp_get_post_categories(get_the_ID());
+                ?>
+                <div class="grid">
+                    <div class="card">
+                        <div class="card__image">
+                            <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(),'full') ?>" alt="">
+
+                            <div class="card__overlay card__overlay--dark">
+                                <div class="card__overlay-content">
+                                    <ul class="card__meta">
+                                        <li><a href="#">Featured</a></li>
+                                        <?php
+                                        foreach ($cats as $cat){
+                                            ?>
+                                            <li><a href="<?php echo get_category_link($cat) ?>"><?php echo get_cat_name($cat)?></a></li>
+                                            <?php
+                                        }
+                                        ?>
+                                    </ul>
+
+                                    <a href="<?php echo get_permalink(get_the_ID()) ?>" class="card__title"><?php echo get_the_title(get_the_ID())?></a>
+
+                                    <ul class="card__meta card__meta--last">
+                                        <li><a href="#0">
+                                                <?php
+                                                echo prefix_estimated_reading_time(get_the_ID())
+                                                ?>
+                                            </a></li>
+                                        <li><a href="<?php echo get_permalink(get_the_ID()) ?>"> Read more</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php
+                $grid_first = false;
+            endwhile; endif;
+            wp_reset_query();
+            ?>
+        </div>
 
     </div>
     </div>
