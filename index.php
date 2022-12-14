@@ -105,7 +105,7 @@ wp_reset_query();
             <h2 class="secondary">Trending Posts</h2>
             <div class="post-grid">
                 <?php
-                $trendy_posts  = get_posts( array( 'post_type' => 'post', 'meta_key' => 'post_views_count', 'orderby' => 'meta_value_num', 'order' => 'DESC', 'posts_per_page' => 3 ) );
+                $trendy_posts  = array_slice(get_posts( array( 'post_type' => 'post', 'meta_key' => 'post_views_count', 'orderby' => 'meta_value_num', 'order' => 'DESC', 'numberposts ' => 3) ),0,3);
                 $grid_first = true;
                 foreach ( $trendy_posts as $trendy_post ) {
                     $trendy_post_id = $trendy_post->ID;
@@ -119,7 +119,7 @@ wp_reset_query();
                                 <div class="card__overlay card__overlay--dark">
                                     <div class="card__overlay-content">
                                         <ul class="card__meta">
-                                            <li><a href="#">Featured</a></li>
+                                            <li><a href="#">Trending</a></li>
                                             <?php
                                             foreach ($trendy_cats as $cat){
                                                 ?>
@@ -147,7 +147,6 @@ wp_reset_query();
                     <?php
                     $grid_first = false;
                 }
-                wp_reset_query();
                 ?>
             </div>
         </div>
@@ -167,7 +166,6 @@ wp_reset_query();
                             <div class="card__overlay card__overlay--dark">
                                 <div class="card__overlay-content">
                                     <ul class="card__meta">
-                                        <li><a href="#">Featured</a></li>
                                         <?php
                                         foreach ($cats as $cat){
                                             ?>
@@ -180,7 +178,7 @@ wp_reset_query();
                                     <a href="<?php echo get_permalink(get_the_ID()) ?>" class="card__title"><?php echo get_the_title(get_the_ID())?></a>
 
                                     <ul class="card__meta card__meta--last">
-                                        <li><a href="#0">
+                                        <li><a href="#">
                                                 <?php
                                                 echo prefix_estimated_reading_time(get_the_ID())
                                                 ?>
@@ -198,7 +196,18 @@ wp_reset_query();
             wp_reset_query();
             ?>
         </div>
-
+        <?php
+        global $wp_query;
+        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+        if ($paged<$wp_query->max_num_pages)
+        {
+         ?>
+            <div class="blog-pagination">
+                <a href="#" class="button paginate-next" data-current-query='<?php echo urlencode(json_encode($wp_query->query_vars)); ?>'>Load more</a>
+            </div>
+                <?php
+        }
+        ?>
     </div>
     </div>
 <?php
