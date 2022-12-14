@@ -376,4 +376,8 @@ main .blog-posts .post-grid .grid .card .card__image {
   margin: 3rem;
 }
 
+.page-container {
+  min-height: 55vh;
+}
+
 /*# sourceMappingURL=theme.css.map */
